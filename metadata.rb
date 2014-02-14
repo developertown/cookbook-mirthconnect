@@ -1,6 +1,6 @@
-maintainer       "Example Com"
-maintainer_email "ops@example.com"
+maintainer       "Diagnotes, Inc."
+maintainer_email "admin@diagnotes.net"
 license          "Apache 2.0"
-description      "Installs/Configures mirthconnect"
+description      "Installs/Configures Mirth Connect"
 
 version          "0.1"
