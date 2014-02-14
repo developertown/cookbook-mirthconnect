@@ -1,0 +1,16 @@
+author "Jason Vasquez <jvasquez@diagnotes.net>"
+description "Mirth Connect Server"
+
+start on (started network-interface
+          or started network-manager
+          or started networking)
+stop on [!12345]
+
+respawn
+respawn limit 10 120
+
+setuid <%= @user %>
+setgid <%= @group %>
+console log
+chdir "<%= @mirthdir %>"
+exec /usr/bin/java -jar "<%= @mirthdir %>/mirth-server-launcher.jar"
