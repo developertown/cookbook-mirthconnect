@@ -5,3 +5,8 @@ default[:mirthconnect][:download_url]  = "http://downloads.mirthcorp.com/connect
 default[:mirthconnect][:homedir] = "/opt/mirth"
 default[:mirthconnect][:user] = "mirth"
 default[:mirthconnect][:group] = "mirth"
+
+default[:mirthconnect][:dbtype] = "postgres"
+default[:mirthconnect][:dburl] = "db.host"
+default[:mirthconnect][:dbuser] = "mirth"
+default[:mirthconnect][:dbpassword] = "mirthpassword"

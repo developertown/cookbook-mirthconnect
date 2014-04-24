@@ -79,6 +79,19 @@ template "/etc/init/mirthconnect.conf" do
   })
 end
 
+template "/opt/mirth/Mirth Connect/conf/mirth.properties" do
+  source "mirth.properties.erb"
+  mode 0600
+  owner "mirth"
+  group "root"
+  variables({
+    :dbtype => node[:mirthconnect][:dbtype],
+    :dburl => node[:mirthconnect][:dburl],
+    :dbuser => node[:mirthconnect][:dbuser],
+    :dbpassword => node[:mirthconnect][:dbpassword]
+  })
+end
+
 service "mirthconnect" do
   provider Chef::Provider::Service::Upstart
   action :start
